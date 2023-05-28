@@ -24,7 +24,9 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
  */
 
 // Your code goes here...
-export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
+export const handlePromise1 = Promise
+  .all(promiseArr)
+  .catch((e) => e);
 
 /**
  * @task
@@ -40,7 +42,15 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  * !!! The function must be exported !!!
  */
 
-// Your code goes here...
+export const handlePromise2 = (promiseArr) => {
+  return Promise.any(promiseArr)
+    .then((values) => {
+      return values;
+    })
+    .catch((reason) => {
+      throw reason;
+    });
+}
 
 /**
  * @task
@@ -57,6 +67,9 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  */
 
 // Your code goes here...
+export const handlePromise3 = (promiseArr) => {
+  return Promise.allSettled(promiseArr);
+}
 
 /**
  * @task
@@ -67,9 +80,10 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  */
 
 export const newPromiseArr = promiseArr.filter((promise) => {
-  // Your code goes here...
-  return promise;
-});
+  return Promise.race([promise, promise4])
+    .then((value) => value === promise4)
+    .catch(() => false);
+})
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
 export const handlePromise4 = (arr) => {
