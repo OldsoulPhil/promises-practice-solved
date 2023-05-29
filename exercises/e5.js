@@ -21,10 +21,11 @@ export const attachTitle = (arg) => {
  */
 
 export const getPromise = () => {
-  return new Promise((resolve, reject) => resolve('MANHATTAN'))
+  return new Promise((resolve) => resolve('MANHATTAN'))
     .then((statement) => attachTitle(statement))
-    .then((result) => console.log(result));
-};
+    .then((result) => console.log(result))
+    .catch((e) => e)
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

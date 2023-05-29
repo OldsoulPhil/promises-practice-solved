@@ -36,7 +36,7 @@ export function alwaysThrows() {
  */
 
 export function onReject(arg) {
-  console.log(arg.message || arg)
+  console.log(arg.message || arg);
 }
 
 /**

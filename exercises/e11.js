@@ -27,7 +27,7 @@ export const usersUrl = 'http://localhost:3000/users/';
 */
 
 export const getLoginList = (data) => {
-  return data.map((val) => val.login);
+  return data.map(val => val.login);
 }
 
 /**

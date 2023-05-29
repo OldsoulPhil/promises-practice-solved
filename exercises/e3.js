@@ -15,7 +15,7 @@
  * Example: export const getPromise(num) => return <Your code of promise>
  */
 export const getPromise = (num) => {
-  return (num === Math.floor(num)) ? new Promise((res) => { res(num); }) : 0
+  return (num === Math.floor(num)) ? new Promise((res) => { res(num); }) : 0;
 };
 
 /**
@@ -33,7 +33,7 @@ export const updateSumValue = () => {
   let sum = 2;
   const promise = getPromise(120);
   promise
-    .then((answer) => sum + answer);
+    .then((answer) => sum += answer);
   sum += 8;
   return sum;
 };

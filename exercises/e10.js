@@ -80,9 +80,7 @@ export const handlePromise3 = (promiseArr) => {
  */
 
 export const newPromiseArr = promiseArr.filter((promise) => {
-  return Promise.race([promise, promise4])
-    .then((value) => value === promise4)
-    .catch(() => false);
+  return promise !== promise2 && promise !== promise3;
 })
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work

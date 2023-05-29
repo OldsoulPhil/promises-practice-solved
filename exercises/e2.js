@@ -33,7 +33,7 @@ export const handlePromise = (promise) => {
   return promise
     .then(
       (resolve) => resolve,
-      (reject) => 'Uh Oh'
+      () => 'Uh Oh'
     )
 };
 

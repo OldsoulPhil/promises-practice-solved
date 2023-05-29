@@ -23,9 +23,9 @@ const second = (val) => {
 // Refactor the following code...
 export const handlePromise = first()
   .then((first) => second(first))
-  .then((end) => {
-    console.log(end);
-    return end;
+  .then((val) => {
+    console.log(val);
+    return val;
   });
 
 // === TEST YOURSELF ===
